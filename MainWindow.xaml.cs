@@ -1,6 +1,8 @@
-﻿//Dylan Primmer
-//Euler Power digit sum Project
-//June 19, 2018
+﻿//DylanPrimmer
+//Culminating assignment
+//Calculate even number sum in fibonacci sequence
+//06.12.2018
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,45 +18,48 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace power_digit_sum_culm
+namespace Fibonacci_culminating
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {// creates variables for code and sets values
+        int Total = 0;
+        public static int Fibonacci(int n) {
+            int x = 0;
+            int y = 1;
+            
+            
+            for (int i = 0; i < n; i++)  {
+
+                int temp = x;
+                x = y;
+                y = temp + y;
+                
+
+            }
+            return x;
+
+                }
         public MainWindow()
         {
-          
             InitializeComponent();
-            int[] digits = new int[350];
+            for (int i = 0; i < 34; i ++)
+            { 
 
-            
-            digits[0] = 1;
-            //2 to the power of 1000
-            for (int i = 0; i < 1000; i++)
-            {
-                //multiply digits by 2
-                for (int T = digits.Length - 2; T >= 0; T--)
+                // shows output of code
+                Console.WriteLine(Fibonacci(i));
+                if (Fibonacci(i) % 2 == 0)
+                    
                 {
-                    digits[T] *= 2;
-                    digits[T + 1] += digits[T] / 10;
-                    digits[T] %= 10;
+                    Console.WriteLine("even");
+                    Total += Fibonacci(i);
+
                 }
             }
-
-            //find sum
-            double sum = 0;
-            for (int i = 0; i < digits.Length; i++)
-            {
-                sum += digits[i];
-            }
-            //show answer
-            Console.WriteLine(sum);
-            MessageBox.Show("The sum of the product of 2^1000");
-            MessageBox.Show(sum.ToString());
+            Console.Read();
+            MessageBox.Show(Total.ToString());
         }
     }
 }
-    
-

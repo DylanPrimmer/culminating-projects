@@ -1,12 +1,12 @@
-﻿<Window x:Class="power_digit_sum_culm.MainWindow"
+﻿<Window x:Class="Fibonacci_culminating.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:power_digit_sum_culm"
+        xmlns:local="clr-namespace:Fibonacci_culminating"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <TextBox x:Name="Fib" Text="Fibonacci Sequence:" Height="322" ></TextBox>
+    </StackPanel>
 </Window>
